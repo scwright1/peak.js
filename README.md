@@ -1,4 +1,4 @@
-peak.io
+peak.js
 =======
 
-Peak.io
+Peak.js

@@ -1,4 +1,4 @@
-/* peak.io core loader */
+/* peak.js core loader */
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -7,7 +7,7 @@ function server() {
 }
 
 function start() {
-	console.log('Peak.io Start');
+	console.log('Peak.js Start');
 	var server = require('./server');
 	server();
 }
