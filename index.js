@@ -5,4 +5,4 @@
 
 var peak = require('./core');
 
-peak();
+peak.start();

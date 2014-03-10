@@ -2,10 +2,10 @@
 	"name"			: "Peak.io",
 	"author"		: "Stephen Wright",
 	"version"		: "0.0.1",
-	"description"	: "Peak.io",
+	"description"	: "Peak.io - Scalable SPA Framework",
 	"repository"	: {
 		"type"	: "git",
-		"url"	: "https://github.com/scwright1/peak.io.git"
+		"url"	: "git://github.com/scwright1/peak.io.git"
 	},
 	"main"			: "./core/index",
 	"scripts"		: {

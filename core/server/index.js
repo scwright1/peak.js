@@ -1,10 +1,14 @@
 /* server loader */
 
-var express		= require('express');
+var express		= require('express'),
+	config		= require('./config'),
+	routes		= require('./routes');
 
 function boot(server) {
-	server.listen(3000, function() {
-		console.log('Server started');
+	config.load();
+	routes.client(server);
+	server.listen(config().server.port, function() {
+		console.log('Listening on port '+config().server.port);
 	});
 }
 
