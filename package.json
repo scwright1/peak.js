@@ -1,0 +1,17 @@
+{
+	"name"			: "Peak.io",
+	"author"		: "Stephen Wright",
+	"version"		: "0.0.1",
+	"description"	: "Peak.io",
+	"repository"	: {
+		"type"	: "git",
+		"url"	: "https://github.com/scwright1/peak.io.git"
+	},
+	"main"			: "./core/index",
+	"scripts"		: {
+		"start"		: "node index"
+	},
+	"dependencies"	: {
+		"express"	: "*"
+	}
+}
