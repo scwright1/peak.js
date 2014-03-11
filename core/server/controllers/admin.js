@@ -1,9 +1,9 @@
 
-var clientControllers = {
+var adminControllers = {
 	'home': function(req, res, next) {
 		res.render('index');
 	}
 };
 
 
-module.exports = clientControllers;
+module.exports = adminControllers;

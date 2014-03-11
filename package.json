@@ -12,6 +12,7 @@
 		"start"		: "node index"
 	},
 	"dependencies"	: {
-		"express"	: "*"
+		"express"		: "*",
+		"hbs"			: "*" 
 	}
 }
