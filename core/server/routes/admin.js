@@ -1,4 +1,4 @@
-var client = require('../controllers/admin');
+var admin = require('../controllers/admin');
 
 module.exports = function(server) {
 	server.get('/admin', admin.home);

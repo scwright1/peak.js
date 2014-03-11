@@ -1,7 +1,7 @@
 
 var adminControllers = {
 	'home': function(req, res, next) {
-		res.render('index');
+		res.render('admin');
 	}
 };
 
