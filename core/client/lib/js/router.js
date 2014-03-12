@@ -2,7 +2,8 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-], function($, _, Backbone) {
+	'views/search',
+], function($, _, Backbone, searchView) {
 	var AppRouter = Backbone.Router.extend({
 		routes: {
 			"": "home",
@@ -18,7 +19,9 @@ define([
 		});
 
 		router.on('route:showAdmin', function() {
+			var search = new searchView();
 			//render admin view
+			search.render();
 			console.log('Admin view via client');
 		});
 
