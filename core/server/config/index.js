@@ -1,17 +1,18 @@
 /* load config */
 
 var paths = require('./paths'),
-	env = process.env.NODE_ENV || 'development',
-	pConfig;
+	loader = require('./loader'),
+	configuration;
 
 function config() {
-	return pConfig;
+	return configuration;
 }
 
 function load() {
-	var configFile = paths().config;
-	pConfig = require(configFile)[env];
-	return pConfig;
+	//do the loading work here
+	return loader().then(function(config) {
+		configuration = config;
+	});
 }
 
 config.paths = paths;

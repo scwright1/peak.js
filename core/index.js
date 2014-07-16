@@ -1,15 +1,18 @@
 /* peak.js core loader */
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var config			= require('./server/config'),
+	console			= require('buggr');
 
 function server() {
 	return;
 }
 
 function start() {
-	console.log('Peak.js Start');
-	var server = require('./server');
-	server();
+	config.load().then(function() {
+		if(process.env.NODE_ENV === 'development') console.emphasis('App Starting...');
+		var server = require('./server');
+		server();
+	});
 }
 
 server.start = start;
