@@ -28,10 +28,13 @@ function boot(server) {
 	//		configAuth(server, callback);
 	//	},
 
-
+		function(callback) {
+			config.loadPlugins(callback);
+		},
 		//3 - configure routes
 		function(callback) {
 			loadRoutes(server, callback);
+			console.log(config.plugins());
 		},
 		//4 - configure internal error handler
 		function(callback) {
@@ -102,6 +105,7 @@ function configServer(server, callback) {
 		console.warn('Configuring Server');
 		server.use(express.static(config.paths().statics));
 		server.set('view engine', 'hbs');
+		hbs.localsAsTemplateData(server);
 		//set where we serve server renders from
 		server.set('views', config.paths().views);
 		if(dev) server.use(require('morgan')('dev'));
@@ -138,8 +142,6 @@ function loadRoutes(server, callback) {
 		console.assert('Failed to start router:', e);
 	}
 }
-
-
 
 /**
  * load ErrorHandler (internal server errors)

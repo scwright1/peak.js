@@ -1,7 +1,9 @@
+var configuration = require('../config')();
+
 
 var adminControllers = {
-	'home': function(req, res, next) {
-		res.render('index');
+	'index': function(req, res, next) {
+		res.render('login', {title: configuration.server.site_url});
 	}
 };
 

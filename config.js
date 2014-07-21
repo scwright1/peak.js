@@ -10,8 +10,9 @@ var config = {
 		},
 		//server details
 		server: {
-			host: '127.0.0.1',
-			port: '3422'
+			host: 		'127.0.0.1',
+			port: 		'3422',
+			site_url:	'Peak.js - Scalable SPA Framework'
 		}
 	},
 	production: {
