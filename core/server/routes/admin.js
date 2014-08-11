@@ -7,4 +7,7 @@ module.exports = function(server) {
         res.redirect('/admin/');
     });
     server.get('/admin/', admin.index);
+    server.get('/admin/login', admin.login);
+    server.post('/admin/validate', admin.validate);
+    server.get('/admin/logout', admin.logout);
 };

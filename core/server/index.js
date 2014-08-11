@@ -8,6 +8,9 @@ var express		= require('express'),
 	fs			= require('fs'),
 	path		= require('path'),
 	async		= require('async'),
+	passport	= require('passport'),
+	nedb 		= require('nedb'),
+	db,
 	configuration,
 	dev = true;
 
@@ -22,6 +25,10 @@ function boot(server) {
 		//1 - configure express
 		function(callback) {
 			configServer(server, callback);
+		},
+		//2 - configure Database
+		function(callback) {
+			configDB(server, callback);
 		},
 		//3 - configure passport
 	//	function(callback) {
@@ -119,6 +126,29 @@ function configServer(server, callback) {
 		return callback();
 	} catch(e) {
 		console.assert('Error in configServer', e);
+	}
+}
+
+function configDB(server, callback) {
+	try {
+		db = new nedb({filename: config.paths().root+'/data/data.db', autoload: true});
+		if(dev) console.success('✓ OK DB Load');
+		return callback();
+	} catch(e) {
+		console.assert('Error in configDB', e);
+	}
+}
+
+function configAuth(server, callback) {
+	try {
+		require('./models/user');
+		require('./middleware/passport')(passport);
+		server.use(passport.initialize());
+		server.use(passport.session());
+		if(dev) console.success('✓ OK Passport Auth');
+		return callback();
+	} catch(e) {
+		console.assert('Error in configAuth', e);
 	}
 }
 

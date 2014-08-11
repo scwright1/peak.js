@@ -1,7 +1,7 @@
 {
 	"name"			: "Peak.js",
 	"author"		: "Stephen Wright",
-	"version"		: "0.0.2",
+	"version"		: "0.0.3",
 	"description"	: "Peak.js - Scalable Portfolio Framework",
 	"repository"	: {
 		"type"	: "git",
@@ -20,6 +20,9 @@
 		"morgan"			: "*",
 		"body-parser"		: "*",
 		"method-override"	: "*",
-		"cookie-parser"		: "*"
+		"cookie-parser"		: "*",
+		"passport" 			: "*",
+		"passport-local" 	: "*",
+		"nedb"				: "*"
 	}
 }

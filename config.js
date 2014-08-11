@@ -1,7 +1,7 @@
 var config = {
 	development: {
 		//url to be used in link generation
-		url: 'http://my.peakjs.com',
+		url: 'http://localhost',
 		//mongodb connection settings
 		database: {
 			host:	'127.0.0.1',
@@ -17,7 +17,7 @@ var config = {
 	},
 	production: {
 		//url to be used in link generation
-		url: 'http://my.peakjs.com',
+		url: 'http://manalab.co',
 		//mongodb connection settings
 		database: {
 			host: '127.0.0.1',

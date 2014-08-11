@@ -14,7 +14,8 @@ function paths() {
 		'views': path.join(serverPath, 'views/'),
 		'statics': path.join(corePath, 'static/'),
 		'server': serverPath,
-		'plugins': pluginsPath
+		'plugins': pluginsPath,
+		'root': rootPath
 	};
 }
 
